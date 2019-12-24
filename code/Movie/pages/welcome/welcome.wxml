@@ -1,10 +1,10 @@
-<view>
-  <view>
-    <image style="width:512px;height:512px"           src="../../images/avatar.jpg" />
-  </view>
-	<text>from pain</text>
-	<view>
-		<text>一袋米要扛几楼</text>
+<view class="user-wrap">
+  <view class="user-flex">
+	  <view class="user-avatar-wrap">
+    	<image  class = "user-avatar" src="../../images/avatar.jpg" />
+	  </view>
+	<text >Hello,sakurahuang</text>
+	<text>欢迎踏入小程序入门之路</text>
 	</view>
 </view>
 

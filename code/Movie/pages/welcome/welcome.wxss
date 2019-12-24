@@ -1,0 +1,24 @@
+.user-wrap{
+    width:400rpx;
+    margin:160rpx auto;
+    
+}
+.user-flex{
+    display: flex;
+    flex-direction:column;
+}
+.user-flex > text{
+    text-align: center;
+    margin-top:50rpx;
+    flex:1;
+}
+.user-avatar-wrap{
+    margin-top:50rpx;
+    flex:1;
+}
+.user-avatar{
+    width:400rpx;
+    height:400rpx;
+    border-radius: 50%;
+}
+
