@@ -1,8 +1,10 @@
 <view>
-	<image src="../../images/avatar.jpg" />
-	<text>from sakurahuang</text>
+  <view>
+    <image style="width:512px;height:512px"           src="../../images/avatar.jpg" />
+  </view>
+	<text>from pain</text>
 	<view>
-		<text>努力学习天天向上</text>
+		<text>一袋米要扛几楼</text>
 	</view>
 </view>
 
