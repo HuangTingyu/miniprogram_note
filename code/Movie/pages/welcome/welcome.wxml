@@ -1,10 +1,12 @@
 <view class="user-wrap">
-  <view class="user-flex">
-	  <view class="user-avatar-wrap">
-    	<image  class = "user-avatar" src="../../images/avatar.jpg" />
-	  </view>
-	<text >Hello,sakurahuang</text>
-	<text>欢迎踏入小程序入门之路</text>
+	<view class="user-flex">
+	  	<view class="user-avatar-wrap">
+    		<image  class = "user-avatar" src="../../images/avatar.jpg" />
+	  	</view>
+		<text class="user-name">Hello,sakurahuang</text>
+		<view class="user-btn">
+			<text>欢迎进入小程序</text>
+		</view>
 	</view>
 </view>
 

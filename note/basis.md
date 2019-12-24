@@ -49,4 +49,50 @@ pages下面，一个目录就代表一个页面
 
 ### Flex弹性盒子模型
 
+一个简单的欢迎页面
+
+具体代码参考`miniprogram_note\code\Movie\pages\welcome`
+
+![avatar](./images/welcome.png)
+
+flex样式重点，利用一层view包裹三部分，实现垂直轴上居中对齐
+
+```
+.user-flex{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+```
+
+另外三部分，
+
+```
+.user-flex > text{
+    margin-top:50rpx;
+    flex:1;
+}
+.user-avatar-wrap{
+    margin-top:50rpx;
+    flex:1;
+}
+```
+
+设置背景色
+
+```
+page{
+  height:100%;
+  background-color: #b3d4db;
+}
+```
+
+修改导航栏颜色，`app.json`
+
+```
+"window":{
+    "navigationBarBackgroundColor":"#b3d4db"
+  }
+```
+
 ### 移动端分辨率及小程序自适应单位RPX
