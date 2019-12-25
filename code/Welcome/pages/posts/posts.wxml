@@ -1,6 +1,6 @@
 <!--pages/posts/posts.wxml-->
 <view>
-  <swiper class="posts_swiper" indicator-dots="true">
+  <swiper class="posts_swiper" indicator-dots="{{true}}" autoplay="{{false}}">
     <swiper-item>
       <image src="/images/iqiyi.png" class="posts_swiper"></image>
     </swiper-item>
@@ -15,16 +15,16 @@
   <view class="posts_wrap">
     <view class="posts_user">
       <image src="/images/avatar/1.jpg" class="posts_user_img"></image>
-      <text class="posts_user_date">December 6 2019</text>
+      <text class="posts_user_date">{{date}}</text>
     </view>
-    <text class="posts_title">罗云熙Leo</text>
-    <image src="/images/leo.jpg" class="posts_img"></image>
-    <text class="posts_desc">第一次尝试扎发带，心里莫名就有种玩什么游戏都能赢的气势（虽然好像也没有） </text>
+    <text class="posts_title">{{title}}</text>
+    <image src="{{post_img}}" class="posts_img"></image>
+    <text class="posts_desc">{{content}}</text>
     <view class="posts_star">
       <image src="/images/icon/none-star.png" class="posts_star_img"></image>
-      <text>12</text>
+      <text>{{collect_num}}</text>
       <image src="/images/icon/view.png" class="posts_star_img"></image>
-      <text>34</text>
+      <text>{{view_num}}</text>
     </view>
   </view>
 </view>
