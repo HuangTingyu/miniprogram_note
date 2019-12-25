@@ -11,4 +11,20 @@
       <image src="/images/wx.png" class="posts_swiper"></image>
     </swiper-item>
   </swiper>
+
+  <view class="posts_wrap">
+    <view class="posts_user">
+      <image src="/images/avatar/1.jpg" class="posts_user_img"></image>
+      <text class="posts_user_date">December 6 2019</text>
+    </view>
+    <text class="posts_title">罗云熙Leo</text>
+    <image src="/images/leo.jpg" class="posts_img"></image>
+    <text class="posts_desc">第一次尝试扎发带，心里莫名就有种玩什么游戏都能赢的气势（虽然好像也没有） </text>
+    <view class="posts_star">
+      <image src="/images/icon/none-star.png" class="posts_star_img"></image>
+      <text>12</text>
+      <image src="/images/icon/view.png" class="posts_star_img"></image>
+      <text>34</text>
+    </view>
+  </view>
 </view>
