@@ -100,7 +100,7 @@ onLoad: function (options) {
 
 建议使用以下写法
 
-```
+```html
 <swiper class="posts_swiper" indicator-dots="{{true}}" autoplay="{{false}}">
 </swiper>
 ```
@@ -113,4 +113,105 @@ onLoad: function (options) {
 <swiper class="posts_swiper" autoplay="false">
 </swiper>
 ```
+
+解锁双花括号更多用法，请进入官方文档搜索 `数据绑定`
+
+### 条件渲染、列表渲染
+
+条件渲染
+
+```
+wx:if
+```
+
+列表渲染
+
+`posts.wxml` 部分
+
+```html
+<block wx:for="{{posts_content}}" wx:for-item="item" wx:key="date">
+    <view class="posts_wrap">
+      <view class="posts_user">
+        <image src="{{item.img.author_img}}" class="posts_user_img"></image>
+        <text class="posts_user_date">{{item.date}}</text>
+      </view>
+      <text class="posts_title">{{item.title}}</text>
+      <image src="{{item.img.post_img}}" class="posts_img"></image>
+      <text class="posts_desc">{{item.content}}</text>
+      <view class="posts_star">
+        <image src="/images/icon/none-star.png" class="posts_star_img"></image>
+        <text>{{item.collect_num}}</text>
+        <image src="/images/icon/view.png" class="posts_star_img"></image>
+        <text>{{item.view_num}}</text>
+      </view>
+    </view>
+  </block>
+```
+
+`posts.js` 部分
+
+```js
+onLoad: function (options) {
+    var posts_content = [{
+      date: "December 6 2019",
+      title:"罗云熙Leo",
+      img:{
+        post_img: "/images/post/leo1.jpg",
+        author_img: "/images/avatar/1.jpg" 
+      },
+      content:"第一次尝试扎发带，心里莫名就有种玩什么游戏都能赢的气势（虽然好像也没有）",
+      view_num:"112",
+      collect_num:"96",
+    },
+    {
+      date: "November 25 2019",
+      title:"罗云熙Leo",
+      img:{
+        post_img: "/images/post/leo2.jpg",
+        author_img: "/images/avatar/1.jpg" 
+      },
+      content:"#魔熙先生# #罗云熙魔熙先生# 关于成长，关于乡愁,每个人都有一个属于自己的故事重游故地，回忆如潮水般涌来,那是游子对家乡的呼唤@罗云熙Leo",
+      view_num:"102",
+      collect_num:"45",
+    },
+  ]
+    this.setData({posts_content})
+  },
+```
+
+### 模板使用
+
+## template
+
+只能复用`wxml` 和 `wxss` ，因此 `posts-item-template.wxml` 的JS逻辑，只能写在`posts.js` 里面。
+
+#### wxml
+
+`posts` 下面建一个 `posts-item` 文件夹，以及 `posts-item-template.wxml` ,`posts-item-template.wxss`
+
+`posts-item-template.wxml`
+
+```html
+<template name="postItem">
+</template>
+```
+
+`posts.wxml`引入
+
+```html
+  <import src="posts-item/posts-item-template.wxml" />
+  <block wx:for="{{postsContent}}" wx:for-item="item" wx:key="date">
+    <template is="postItem" data="{{item}}"></template>
+  </block>
+```
+
+#### wxss
+
+`posts.wxss`
+
+```
+@import "./posts-item/posts-item-template.wxss"
+```
+
+### 自定义组件
 

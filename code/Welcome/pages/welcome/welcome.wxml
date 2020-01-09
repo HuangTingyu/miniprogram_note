@@ -4,7 +4,7 @@
     		<image  class = "user-avatar" src="../../images/avatar.jpg" />
 	  	</view>
 		<text class="user-name">Hello,sakurahuang</text>
-		<view class="user-btn">
+		<view class="user-btn" bind:tap="onTap">
 			<text>欢迎进入小程序</text>
 		</view>
 	</view>

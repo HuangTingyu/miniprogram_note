@@ -154,3 +154,48 @@ Ip6 下 1px = 1rpx = 0.5pt
 注意 ：
 
 > 页面配置中只能设置 `app.json` 中 `window` 对应的配置项，以决定本页面的窗口表现，所以无需写 `window` 这个属性。
+
+## 事件的捕捉和回调
+
+绑定点击事件
+
+```
+<view class="user-btn" bind:tap="onTap">
+	<text>欢迎进入小程序</text>
+</view>
+```
+
+两个跳转api —— `wx.navigateTo` ，以及 `wx.redirectTo`
+
+```
+onTap:function(){
+    wx.navigateTo({
+      url: '../posts/posts',
+    })
+  }
+```
+
+这两个API的区别，触发的生命周期不同
+
+- 使用`navigateTo` , `welcome` 页面仅仅是隐藏，可以通过左上角的返回键回到页面。
+- 使用`redirectTo` , `welcome` 页面将被卸载，不会出现返回按钮，
+
+```js
+Page({
+  onTap:function(){
+    // wx.navigateTo({
+    //   url: '../posts/posts',
+    // })
+    wx.redirectTo({
+      url: '../posts/posts',
+    })
+  },
+  onUnload:function(){
+    console.log('welcome unload')
+  },
+  onHide:function(){
+    console.log('welcome onhide')
+  }
+})
+```
+

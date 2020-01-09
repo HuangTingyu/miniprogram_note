@@ -11,6 +11,12 @@
 
 ### 笔记文件目录
 
+cloudDevelopment.md —— 小程序云开发
+
 basis.md —— 小程序入门基础
 
 news.md —— 新闻列表
+
+### 格式化快捷键
+
+`Alt` + `shift` + F
