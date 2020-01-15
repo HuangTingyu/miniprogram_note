@@ -1,4 +1,17 @@
-var localDataBase = [{
+var localDataBase = [
+  {
+    postId:0,
+    date: "December 27 2019",
+    title: "罗云熙Leo",
+    img: {
+      post_img: "/images/post/leo4.jpg",
+      author_img: "/images/avatar/1.jpg"
+    },
+    content: "#爱豆锦鲤月# 总是你们送我花，这次换我送你们",
+    view_num: "78",
+    collect_num: "45",
+  },{
+    postId:1,
     date: "December 6 2019",
     title: "罗云熙Leo",
     img: {
@@ -10,6 +23,7 @@ var localDataBase = [{
     collect_num: "96",
   },
   {
+    postId:2,
     date: "November 25 2019",
     title: "罗云熙Leo",
     img: {

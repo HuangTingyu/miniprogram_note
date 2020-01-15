@@ -181,7 +181,7 @@ onLoad: function (options) {
 
 ### 模板使用
 
-## template
+### template
 
 只能复用`wxml` 和 `wxss` ，因此 `posts-item-template.wxml` 的JS逻辑，只能写在`posts.js` 里面。
 
@@ -213,5 +213,23 @@ onLoad: function (options) {
 @import "./posts-item/posts-item-template.wxss"
 ```
 
-### 自定义组件
+### 对象的平铺
+
+加上三个点之后
+
+```
+<template is="postItem" data="{{...item}}"></template>
+```
+
+在子组件使用数据的使用，就不必再写 `item.xxx` , 例如下面的代码
+
+```
+<text class="posts_user_date">{{item.date}}</text>
+```
+
+可以改写为
+
+```
+<text class="posts_user_date">{{date}}</text>
+```
 

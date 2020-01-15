@@ -1,17 +1,17 @@
 <template name="postItem">
   <view class="posts_wrap">
     <view class="posts_user">
-      <image src="{{item.img.author_img}}" class="posts_user_img"></image>
-      <text class="posts_user_date">{{item.date}}</text>
+      <image src="{{img.author_img}}" class="posts_user_img"></image>
+      <text class="posts_user_date">{{date}}</text>
     </view>
-    <text class="posts_title">{{item.title}}</text>
-    <image src="{{item.img.post_img}}" class="posts_img"></image>
-    <text class="posts_desc">{{item.content}}</text>
+    <text class="posts_title">{{title}}</text>
+    <image src="{{img.post_img}}" class="posts_img"></image>
+    <text class="posts_desc">{{content}}</text>
     <view class="posts_star">
       <image src="/images/icon/none-star.png" class="posts_star_img"></image>
-      <text>{{item.collect_num}}</text>
+      <text>{{collect_num}}</text>
       <image src="/images/icon/view.png" class="posts_star_img"></image>
-      <text>{{item.view_num}}</text>
+      <text>{{view_num}}</text>
     </view>
   </view>
 </template>

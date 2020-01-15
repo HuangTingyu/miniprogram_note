@@ -1,0 +1,20 @@
+<view class="posts_detail_wrap">
+  <image src="/images/post/leo4.jpg" class="posts_detail_head_img"></image>
+  <view>
+    <image src="/images/avatar/1.jpg" class="posts_detail_avatar"></image>
+    <text>罗云熙</text>
+    <text>发表于</text>
+    <text>24小时前</text>
+  </view>
+  <text>
+    个人沙雕剪辑
+  </text>
+  <view>
+    <view>
+      <image src="/images/icon/collection.png"></image>
+      <image src="/images/icon/share.png"></image>
+    </view>
+    <view></view>
+  </view>
+  <text>测试正文内容，测试正文内容，测试正文内容，测试正文内容，</text>
+</view>

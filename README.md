@@ -15,7 +15,7 @@ cloudDevelopment.md —— 小程序云开发
 
 basis.md —— 小程序入门基础
 
-news.md —— 新闻列表
+news.md —— 新闻列表(包括template的使用)
 
 ### 格式化快捷键
 
