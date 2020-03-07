@@ -59,41 +59,34 @@ Page({
 
 ### setData绑定数据
 
-`posts.js` 使用 `setData` 绑定
+`posts-detail.js` 使用 `setData` 绑定
 
 ```js
-onLoad: function (options) {
-    var post_content = {
-      date: "December 6 2019",
-      title:"罗云熙Leo",
-      post_img: "/images/post/leo1.jpg",
-      content:"第一次尝试扎发带，心里莫名就有种玩什么游戏都能赢的气势（虽然好像也没有）",
-      view_num:"112",
-      collect_num:"96",
-      author_img: "/images/avatar/1.jpg" 
-    }
-    this.setData(post_content)
-  },
+var postsData = require('../../../data/posts-data.js')
+Page({
+  onLoad:function(option){
+    var postId = option.id;
+    var postData = postsData.postList[postId]
+    this.setData({ postData: postData })
+  }
+})
 ```
 
-`posts.wxml` 应用
+`posts-detail.wxml` 应用
 
 ```html
-<view class="posts_wrap">
-    <view class="posts_user">
-      <image src="/images/avatar/1.jpg" class="posts_user_img"></image>
-      <text class="posts_user_date">{{date}}</text>
-    </view>
-    <text class="posts_title">{{title}}</text>
-    <image src="{{post_img}}" class="posts_img"></image>
-    <text class="posts_desc">{{content}}</text>
-    <view class="posts_star">
-      <image src="/images/icon/none-star.png" class="posts_star_img"></image>
-      <text>{{collect_num}}</text>
-      <image src="/images/icon/view.png" class="posts_star_img"></image>
-      <text>{{view_num}}</text>
-    </view>
+<view class="posts_detail_wrap">
+  <image src="{{postData.headImgSrc}}" class="posts_detail_head_img"></image>
+  <image src="/images/music/music-start.png" class="posts_detail_head_audio"></image>
+  <view class="posts_detail_avatar_wrap">
+    <image src="{{postData.img.author_img}}" class="posts_detail_avatar"></image>
+    <text class="posts_detail_avatar_text">{{postData.author}}</text>
+    <text class="posts_detail_avatar_text">发表于</text>
+    <text class="posts_detail_avatar_text">{{postData.dateTime}}</text>
   </view>
+  <text class="posts-detail-title">
+    {{postData.title}}
+  </text>
 ```
 
 ## 设置true/false属性
@@ -126,56 +119,25 @@ wx:if
 
 列表渲染
 
+```
+wx:for
+```
+
 `posts.wxml` 部分
 
 ```html
-<block wx:for="{{posts_content}}" wx:for-item="item" wx:key="date">
-    <view class="posts_wrap">
-      <view class="posts_user">
-        <image src="{{item.img.author_img}}" class="posts_user_img"></image>
-        <text class="posts_user_date">{{item.date}}</text>
-      </view>
-      <text class="posts_title">{{item.title}}</text>
-      <image src="{{item.img.post_img}}" class="posts_img"></image>
-      <text class="posts_desc">{{item.content}}</text>
-      <view class="posts_star">
-        <image src="/images/icon/none-star.png" class="posts_star_img"></image>
-        <text>{{item.collect_num}}</text>
-        <image src="/images/icon/view.png" class="posts_star_img"></image>
-        <text>{{item.view_num}}</text>
-      </view>
+<block wx:for="{{postsContent}}" wx:for-item="item" wx:key="date">
+    <view bindtap="onPostTap" data-postId="{{item.postId}}">
+       <template is="postItem" data="{{...item}}"></template>
     </view>
-  </block>
+ </block>
 ```
 
 `posts.js` 部分
 
 ```js
 onLoad: function (options) {
-    var posts_content = [{
-      date: "December 6 2019",
-      title:"罗云熙Leo",
-      img:{
-        post_img: "/images/post/leo1.jpg",
-        author_img: "/images/avatar/1.jpg" 
-      },
-      content:"第一次尝试扎发带，心里莫名就有种玩什么游戏都能赢的气势（虽然好像也没有）",
-      view_num:"112",
-      collect_num:"96",
-    },
-    {
-      date: "November 25 2019",
-      title:"罗云熙Leo",
-      img:{
-        post_img: "/images/post/leo2.jpg",
-        author_img: "/images/avatar/1.jpg" 
-      },
-      content:"#魔熙先生# #罗云熙魔熙先生# 关于成长，关于乡愁,每个人都有一个属于自己的故事重游故地，回忆如潮水般涌来,那是游子对家乡的呼唤@罗云熙Leo",
-      view_num:"102",
-      collect_num:"45",
-    },
-  ]
-    this.setData({posts_content})
+      this.setData({ postsContent:postsData.postList})
   },
 ```
 
@@ -201,9 +163,13 @@ onLoad: function (options) {
 ```html
   <import src="posts-item/posts-item-template.wxml" />
   <block wx:for="{{postsContent}}" wx:for-item="item" wx:key="date">
-    <template is="postItem" data="{{item}}"></template>
+    <view bindtap="onPostTap" data-postId="{{item.postId}}">
+       <template is="postItem" data="{{...item}}"></template>
+    </view>
   </block>
 ```
+
+这里的 `is` 是指定引用`name ` 为`postItem` 的模板
 
 #### wxss
 
@@ -232,4 +198,6 @@ onLoad: function (options) {
 ```
 <text class="posts_user_date">{{date}}</text>
 ```
+
+
 
