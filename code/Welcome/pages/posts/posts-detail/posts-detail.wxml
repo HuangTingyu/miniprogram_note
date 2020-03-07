@@ -1,20 +1,20 @@
 <view class="posts_detail_wrap">
   <image src="/images/post/leo4.jpg" class="posts_detail_head_img"></image>
-  <view>
+  <view class="posts_detail_avatar_wrap">
     <image src="/images/avatar/1.jpg" class="posts_detail_avatar"></image>
-    <text>罗云熙</text>
-    <text>发表于</text>
-    <text>24小时前</text>
+    <text class="posts_detail_avatar_text">罗云熙</text>
+    <text class="posts_detail_avatar_text">发表于</text>
+    <text class="posts_detail_avatar_text">24小时前</text>
   </view>
-  <text>
+  <text class="posts-detail-title">
     个人沙雕剪辑
   </text>
-  <view>
-    <view>
+  <view class="posts-detail-tool">
+    <view class="posts-detail-circle-img circleBtn">
       <image src="/images/icon/collection.png"></image>
-      <image src="/images/icon/share.png"></image>
+      <image class="posts-detail-share-img" src="/images/icon/share.png"></image>
     </view>
-    <view></view>
+    <view class="posts-detail-horizon"></view>
   </view>
-  <text>测试正文内容，测试正文内容，测试正文内容，测试正文内容，</text>
+  <text class="posts-detail-article">测试正文内容，测试正文内容，测试正文内容，测试正文内容，</text>
 </view>
