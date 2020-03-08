@@ -199,5 +199,50 @@ onLoad: function (options) {
 <text class="posts_user_date">{{date}}</text>
 ```
 
+### 数据缓存
 
+缓存结果，可以在小程序开发工具的Storage查看。Storage的缓存是永久不会过期的，需要手动删除。
+
+1. 设置缓存(同步)
+
+wx.setStorageSync(string key, any data)
+
+参数 
+
+string key —— 本地缓存中指定的 key
+
+any data —— 需要存储的内容。只支持原生类型、Date、及能够通过`JSON.stringify`序列化的对象。
+
+```
+wx.setStorageSync('dkey', {
+      name:"迪丽热巴",
+      weibo:"@Dear-迪丽热巴"
+    })
+
+    wx.setStorageSync('gkey', {
+      name: "高伟光",
+      weibo: "@深情的高伟光"
+    })
+```
+
+2. 获取缓存
+
+wx.getStorageSync(string key)
+
+3. 移除指定缓存
+
+wx.removeStorage(Object object)
+
+```
+wx.removeStorage({
+      key: 'gkey',
+      success(res) {
+        console.log(res)
+      }
+    })
+```
+
+4. 清除所有缓存(同步)
+
+wx.clearStorageSync()
 
