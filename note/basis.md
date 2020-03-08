@@ -159,13 +159,15 @@ Ip6 下 1px = 1rpx = 0.5pt
 
 ## 事件的捕捉和回调
 
-绑定点击事件
+### 点击事件
 
 ```
 <view class="user-btn" bind:tap="onTap">
 	<text>欢迎进入小程序</text>
 </view>
 ```
+
+### 页面跳转
 
 两个跳转api —— `wx.navigateTo` ，以及 `wx.redirectTo`
 

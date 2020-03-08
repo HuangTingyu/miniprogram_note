@@ -12,7 +12,8 @@
   </text>
   <view class="posts-detail-tool">
     <view class="posts-detail-circle-img circleBtn">
-      <image src="/images/icon/collection.png" bindtap="onCollectionTap"></image>
+      <image wx:if = "{{!collected}}" src="/images/icon/collection-anti.png" bindtap="onCollectionTap"></image>
+      <image wx:else src="/images/icon/collection.png" bindtap="onCollectionTap"></image>
       <image class="posts-detail-share-img" src="/images/icon/share.png" bindtap="onShareTap"></image>
     </view>
     <view class="posts-detail-horizon"></view>

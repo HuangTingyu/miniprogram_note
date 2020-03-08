@@ -1,31 +1,40 @@
 var postsData = require('../../../data/posts-data.js')
 Page({
+  data:{
+    postId: ''
+  },
   onLoad:function(option){
     var postId = option.id;
+    this.data.postId = postId;
     var postData = postsData.postList[postId]
     this.setData({ postData: postData })
 
-    wx.setStorageSync('dkey', {
-      name:"迪丽热巴",
-      weibo:"@Dear-迪丽热巴"
-    })
-
-    wx.setStorageSync('gkey', {
-      name: "高伟光",
-      weibo: "@深情的高伟光"
-    })
+    var postsCollected = wx.getStorageSync('posts_collected')
+    if(postsCollected){
+      var postCollected = postsCollected[postId]
+      this.setData({
+        collected:postCollected
+      })
+    } else {
+      var postsCollected = {}
+      postsCollected[postId] = false
+      wx.setStorageSync('posts_collected',postsCollected)
+    }
   },
   onCollectionTap:function(event){
-    var name = wx.getStorageSync('dkey')
-    console.log(name)
+    var postsCollected = wx.getStorageSync('posts_collected')
+    // console.log(this.data.postId)
+    var postCollected = postsCollected[this.data.postId]
+    postCollected = !postCollected
+    postsCollected[this.data.postId] = postCollected
+    // 更新文章是否的缓存值
+    wx.setStorageSync('posts_collected',postsCollected)
+    // 更新数据绑定变量，切换图片
+    this.setData({
+      collected:postCollected
+    })
   },
   onShareTap:function(event){
-    // wx.clearStorageSync()
-    wx.removeStorage({
-      key: 'gkey',
-      success(res) {
-        console.log(res)
-      }
-    })
+    console.log('share')
   }
 })
