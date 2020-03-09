@@ -34,7 +34,13 @@ var localDataBase = [
     headImgSrc: "../../../images/post/dlrb1.jpg",
     author: "光热",
     dateTime: "1天前",
-    detail: "混迹同人圈多年，她自认为“同人”的“同”字关键在一个“衍生关系”，在观众在对原作本身已有一定了解的基础上，创作双方的流畅程度都会提高。"
+    detail: "混迹同人圈多年，她自认为“同人”的“同”字关键在一个“衍生关系”，在观众在对原作本身已有一定了解的基础上，创作双方的流畅程度都会提高。",
+    music: {
+      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title: 'littleStar',
+      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer: 'children'
+    }
   },
   {
     postId:2,
@@ -50,7 +56,13 @@ var localDataBase = [
     headImgSrc: "../../../images/post/dlrb2.jpg",
     author: "亲爱的大宝贝",
     dateTime: "2周前",
-    detail: "由于允许成人内容，也不干涉题材多样性，分级制使AO3成为国内中文创作平台之外的一大避风港，大量同人爱好者在上面寄存了安心和幻想。就在2019年8月，AO3被授予雨果奖“最佳相关作品奖”，那些本来无处安放的幻想，正式得到了国际认可。"
+    detail: "由于允许成人内容，也不干涉题材多样性，分级制使AO3成为国内中文创作平台之外的一大避风港，大量同人爱好者在上面寄存了安心和幻想。就在2019年8月，AO3被授予雨果奖“最佳相关作品奖”，那些本来无处安放的幻想，正式得到了国际认可。",
+    music: {
+      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title: 'littleStar',
+      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer: 'children'
+    }
   }
 ]
 module.exports = {

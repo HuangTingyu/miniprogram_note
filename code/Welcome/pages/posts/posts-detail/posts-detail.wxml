@@ -1,6 +1,8 @@
 <view class="posts_detail_wrap">
-  <image bindtap="onMusicTap" src="{{postData.headImgSrc}}" class="posts_detail_head_img"></image>
-  <image src="{{isPlayingMusic? '/images/music/music-stop.png' : '/images/music/music-start.png'}}" class="posts_detail_head_audio"></image>
+  <view bindtap="onMusicTap">
+    <image src="{{postData.headImgSrc}}" class="posts_detail_head_img"></image>
+    <image src="{{isPlayingMusic? '/images/music/music-stop.png' : '/images/music/music-start.png'}}" class="posts_detail_head_audio"></image>
+  </view>
   <view class="posts_detail_avatar_wrap">
     <image src="{{postData.img.author_img}}" class="posts_detail_avatar"></image>
     <text class="posts_detail_avatar_text">{{postData.author}}</text>
