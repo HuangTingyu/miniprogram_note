@@ -264,3 +264,25 @@ wx.clearStorageSync()
 
 获取网易云音乐链接的方法 —— <https://www.77shw.com/jc/15501.html>
 
+onMusicTap 部分
+
+以及 onload部分，当操控总开关的时候，让图片上的logo也跟着边变
+
+```
+const backgroundAudioManager = wx.getBackgroundAudioManager()
+
+    backgroundAudioManager.onPlay(function(){
+      self.data.isPlayingMusic = true
+      self.setData({
+        isPlayingMusic: self.data.isPlayingMusic
+      })
+    })
+
+    backgroundAudioManager.onPause(function () {
+      self.data.isPlayingMusic = false
+      self.setData({
+        isPlayingMusic: self.data.isPlayingMusic
+      })
+    })
+```
+

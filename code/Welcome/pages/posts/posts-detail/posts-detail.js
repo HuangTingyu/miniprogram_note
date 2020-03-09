@@ -5,8 +5,9 @@ Page({
     isPlayingMusic:false
   },
   onLoad:function(option){
-    var postId = option.id;
-    this.data.postId = postId;
+    const self = this
+    var postId = option.id
+    this.data.postId = postId
     var postData = postsData.postList[postId]
     this.setData({ postData: postData })
 
@@ -23,6 +24,22 @@ Page({
       postsCollected[postId] = false
       wx.setStorageSync('posts_collected',postsCollected)
     }
+
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+
+    backgroundAudioManager.onPlay(function(){
+      self.data.isPlayingMusic = true
+      self.setData({
+        isPlayingMusic: self.data.isPlayingMusic
+      })
+    })
+
+    backgroundAudioManager.onPause(function () {
+      self.data.isPlayingMusic = false
+      self.setData({
+        isPlayingMusic: self.data.isPlayingMusic
+      })
+    })
   },
   onCollectionTap:function(event){
     var postsCollected = wx.getStorageSync('posts_collected')
@@ -66,7 +83,6 @@ Page({
     console.log('share')
   },
   onMusicTap:function(event){
-    console.log('test')
     let isPlayingMusic = this.data.isPlayingMusic
     let postId = this.data.postId
     let postData = postsData.postList[postId]
