@@ -246,7 +246,7 @@ wx.removeStorage({
 
 wx.clearStorageSync()
 
-### 文章收藏
+#### 应用：文章收藏
 
 `miniprogram_note\code\Welcome\pages\posts\posts-detail.js`
 

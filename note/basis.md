@@ -153,9 +153,19 @@ Ip6 下 1px = 1rpx = 0.5pt
 
 ### 页面配置
 
+除了`app.json` , `pages` 目录下的 `json` 文件都用于页面设置。
+
 注意 ：
 
-> 页面配置中只能设置 `app.json` 中 `window` 对应的配置项，以决定本页面的窗口表现，所以无需写 `window` 这个属性。
+> 页面配置中只能设置 `app.json` 中 `window` 对应的配置项。
+
+`miniprogram_note\code\Welcome\pages\welcome.json`
+
+```
+{
+"navigationBarBackgroundColor": "#b3d4db"
+}
+```
 
 ## 事件的捕捉和回调
 
@@ -201,5 +211,41 @@ Page({
     console.log('welcome onhide')
   }
 })
+```
+
+## 操作提示
+
+`miniprogram_note\code\Welcome\pages\posts\posts-detail.js`
+
+wx.showToast
+
+```js
+wx.showToast({
+      title: postCollected?'收藏成功':'取消成功',
+      icon: 'success',
+      duration: 1000
+    })
+```
+
+wx.showModal
+
+```js
+wx.showModal({
+      title: '收藏',
+      content: postCollected?'是否收藏?':'是否取消收藏?',
+      showCancel:"true",
+      cancelText:"取消",
+      cancelColor:"#333",
+      confirmText:"确认",
+      confirmColor:"#405f80",
+      success:function(res){
+        if(res.confirm){
+          wx.setStorageSync('posts_collected', postsCollected)
+          self.setData({
+            collected:postCollected
+          })
+        }
+      }
+    })
 ```
 
