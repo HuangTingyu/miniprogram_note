@@ -13,7 +13,13 @@ var localDataBase = [
     headImgSrc:"../../../images/post/leo4.jpg",
     author:"罗云熙",
     dateTime:"24小时前",
-    detail:"22岁的朱茗是“欧美圈”七八年的粉丝，自己也会在AO3平台上写同人文，“227”事件之前，她在平台上有一篇放了蛮久没更新的欧美CP同人文，就在前两天，她还收到系统发来的催更提醒邮件。"
+    detail:"22岁的朱茗是“欧美圈”七八年的粉丝，自己也会在AO3平台上写同人文，“227”事件之前，她在平台上有一篇放了蛮久没更新的欧美CP同人文，就在前两天，她还收到系统发来的催更提醒邮件。",
+    music:{
+      url:'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title:'littleStar',
+      coverImg:'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer:'children'
+    }
   },{
     postId:1,
     date: "December 6 2019",

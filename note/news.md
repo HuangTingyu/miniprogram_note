@@ -89,7 +89,7 @@ Page({
   </text>
 ```
 
-## 设置true/false属性
+### 设置true/false属性
 
 建议使用以下写法
 
@@ -250,7 +250,17 @@ wx.clearStorageSync()
 
 `miniprogram_note\code\Welcome\pages\posts\posts-detail.js`
 
+### 详情页音乐播放
 
+`app.json` 授权
 
+```
+"requiredBackgroundModes":["audio"]
+```
 
+`miniprogram_note\code\Welcome\pages\posts\posts-detail.js`
+
+注意，如果音乐链接无效，组件会闪退。
+
+获取网易云音乐链接的方法 —— <https://www.77shw.com/jc/15501.html>
 
