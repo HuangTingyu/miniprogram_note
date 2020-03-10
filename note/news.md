@@ -269,20 +269,21 @@ onMusicTap 部分
 以及 onload部分，当操控总开关的时候，让图片上的logo也跟着边变
 
 ```
-const backgroundAudioManager = wx.getBackgroundAudioManager()
 
-    backgroundAudioManager.onPlay(function(){
-      self.data.isPlayingMusic = true
+backgroundAudioManager.onPlay(function () {
       self.setData({
-        isPlayingMusic: self.data.isPlayingMusic
+        isPlayingMusic: true
       })
+      app.globalData.g_isPlayingMusic = true
+      app.globalData.g_currentMusicPostId = self.data.postId
     })
 
-    backgroundAudioManager.onPause(function () {
-      self.data.isPlayingMusic = false
+backgroundAudioManager.onPause(function () {
       self.setData({
-        isPlayingMusic: self.data.isPlayingMusic
+        isPlayingMusic: false
       })
+      app.globalData.g_isPlayingMusic = false
+      app.globalData.g_currentMusicPostId = null
     })
 ```
 
@@ -300,10 +301,9 @@ const backgroundAudioManager = wx.getBackgroundAudioManager()
 App({
   globalData:{
     g_isPlayingMusic:false,
-    g_postsDetailPostId:''
+    g_currentMusicPostId:null
   }
 })
-
 ```
 
 使用全局变量

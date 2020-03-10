@@ -9,23 +9,16 @@ Page({
     var postId = option.id
     this.data.postId = postId
     var postData = postsData.postList[postId]
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
-    // console.log(app.globalData.g_isPlayingMusic)
-    if (postId === app.globalData.g_postsDetailPostId){
-      this.setData({
-        postData: postData,
-        isPlayingMusic: app.globalData.g_isPlayingMusic
-      })
-    } else {
-      backgroundAudioManager.stop()
-      app.globalData.g_postsDetailPostId = postId
-      app.globalData.g_isPlayingMusic = false
-      this.setData({
-        postData: postData,
-        isPlayingMusic: false
-      })
 
-    }
+    this.setData({
+      postData: postData,
+    })
+
+    if (app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === this.data.postId ){
+      this.setData({
+        isPlayingMusic: true
+      })
+    } 
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected){
@@ -41,23 +34,26 @@ Page({
       wx.setStorageSync('posts_collected',postsCollected)
     }
 
-    this.setMusicMonitor(self)
+    this.setMusicMonitor()
     
   },
-  setMusicMonitor: function (self){
+  setMusicMonitor: function (){
+    const self = this
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.onPlay(function () {
-      app.globalData.g_isPlayingMusic = true
       self.setData({
         isPlayingMusic: true
       })
+      app.globalData.g_isPlayingMusic = true
+      app.globalData.g_currentMusicPostId = self.data.postId
     })
 
     backgroundAudioManager.onPause(function () {
-      app.globalData.g_isPlayingMusic = false
       self.setData({
         isPlayingMusic: false
       })
+      app.globalData.g_isPlayingMusic = false
+      app.globalData.g_currentMusicPostId = null
     })
   },
 
