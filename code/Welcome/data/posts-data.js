@@ -36,9 +36,9 @@ var localDataBase = [
     dateTime: "1天前",
     detail: "混迹同人圈多年，她自认为“同人”的“同”字关键在一个“衍生关系”，在观众在对原作本身已有一定了解的基础上，创作双方的流畅程度都会提高。",
     music: {
-      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      url: 'http://music.163.com/song/media/outer/url?id=260727.mp3',
       title: 'littleStar',
-      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      coverImg: 'http://p1.music.126.net/8EJqU8x3BMl6xWa7RV4nGg==/923589767371678.jpg?param=130y130',
       singer: 'children'
     }
   },

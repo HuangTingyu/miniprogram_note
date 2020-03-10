@@ -9,11 +9,25 @@ Page({
     var postId = option.id
     this.data.postId = postId
     var postData = postsData.postList[postId]
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
     // console.log(app.globalData.g_isPlayingMusic)
-    this.setData({ 
-      postData: postData ,
-      isPlayingMusic: app.globalData.g_isPlayingMusic
-    })
+    if (postId === app.globalData.g_postsDetailPostId){
+      this.setData({
+        postData: postData,
+        isPlayingMusic: app.globalData.g_isPlayingMusic
+      })
+    } else {
+      backgroundAudioManager.stop()
+      app.globalData.g_postsDetailPostId = postId
+      app.globalData.g_isPlayingMusic = false
+      this.setData({
+        postData: postData,
+        isPlayingMusic: false
+      })
+
+    }
+    
+    
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected){
@@ -29,7 +43,7 @@ Page({
       wx.setStorageSync('posts_collected',postsCollected)
     }
 
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    
 
     backgroundAudioManager.onPlay(function(){
       app.globalData.g_isPlayingMusic = true

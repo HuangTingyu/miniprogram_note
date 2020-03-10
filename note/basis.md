@@ -257,3 +257,4 @@ wx.showModal({
 
 ### 全局变量
 
+详见 `news.md` 歌曲状态缓存

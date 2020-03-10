@@ -299,8 +299,17 @@ const backgroundAudioManager = wx.getBackgroundAudioManager()
 ```
 App({
   globalData:{
-    g_isPlayingMusic:false
+    g_isPlayingMusic:false,
+    g_postsDetailPostId:''
   }
 })
+
+```
+
+使用全局变量
+
+```
+var app = getApp()
+console.log(app.globalData.g_isPlayingMusic)
 ```
 
