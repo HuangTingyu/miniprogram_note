@@ -1,15 +1,19 @@
 var postsData = require('../../../data/posts-data.js')
+var app = getApp()
 Page({
   data:{
-    postId: '',
-    isPlayingMusic:false
+    postId: ''
   },
   onLoad:function(option){
     const self = this
     var postId = option.id
     this.data.postId = postId
     var postData = postsData.postList[postId]
-    this.setData({ postData: postData })
+    // console.log(app.globalData.g_isPlayingMusic)
+    this.setData({ 
+      postData: postData ,
+      isPlayingMusic: app.globalData.g_isPlayingMusic
+    })
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected){
@@ -28,16 +32,16 @@ Page({
     const backgroundAudioManager = wx.getBackgroundAudioManager()
 
     backgroundAudioManager.onPlay(function(){
-      self.data.isPlayingMusic = true
+      app.globalData.g_isPlayingMusic = true
       self.setData({
-        isPlayingMusic: self.data.isPlayingMusic
+        isPlayingMusic: true
       })
     })
 
     backgroundAudioManager.onPause(function () {
-      self.data.isPlayingMusic = false
+      app.globalData.g_isPlayingMusic = false
       self.setData({
-        isPlayingMusic: self.data.isPlayingMusic
+        isPlayingMusic: false
       })
     })
   },
@@ -83,6 +87,7 @@ Page({
     console.log('share')
   },
   onMusicTap:function(event){
+    const self = this
     let isPlayingMusic = this.data.isPlayingMusic
     let postId = this.data.postId
     let postData = postsData.postList[postId]
@@ -90,8 +95,10 @@ Page({
 
     if(isPlayingMusic){
       wx.pauseBackgroundAudio()
-      this.data.isPlayingMusic = false
-      this.setData({ isPlayingMusic: this.data.isPlayingMusic })
+      app.globalData.g_isPlayingMusic = false
+      self.setData({
+        isPlayingMusic: false
+      })
     } else {
       backgroundAudioManager.title = postData.music.title
       backgroundAudioManager.epname = postData.music.title
@@ -101,8 +108,10 @@ Page({
       backgroundAudioManager.src = postData.music.url
       // backgroundAudioManager.play()
 
-      this.data.isPlayingMusic = true
-      this.setData({ isPlayingMusic: this.data.isPlayingMusic })
+      app.globalData.g_isPlayingMusic = true
+      self.setData({
+        isPlayingMusic: true
+      })
     }
 
     

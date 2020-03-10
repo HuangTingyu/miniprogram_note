@@ -286,3 +286,21 @@ const backgroundAudioManager = wx.getBackgroundAudioManager()
     })
 ```
 
+### 歌曲状态缓存
+
+离开详情页的时候，背景音乐仍在播放，但是再次点击进入详情页，logo却显示未播放。
+
+此处与文章收藏有区别，不应该使用storage。原因，storage是永久记录的，如果这里使用了storage，那么退出小程序再进入小程序详情页，会出bug。
+
+#### 解决方案 —— 全局变量
+
+`app.js`
+
+```
+App({
+  globalData:{
+    g_isPlayingMusic:false
+  }
+})
+```
+
