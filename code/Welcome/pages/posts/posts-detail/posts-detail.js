@@ -26,8 +26,6 @@ Page({
       })
 
     }
-    
-    
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected){
@@ -43,9 +41,12 @@ Page({
       wx.setStorageSync('posts_collected',postsCollected)
     }
 
+    this.setMusicMonitor(self)
     
-
-    backgroundAudioManager.onPlay(function(){
+  },
+  setMusicMonitor: function (self){
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.onPlay(function () {
       app.globalData.g_isPlayingMusic = true
       self.setData({
         isPlayingMusic: true
@@ -59,6 +60,7 @@ Page({
       })
     })
   },
+
   onCollectionTap:function(event){
     var postsCollected = wx.getStorageSync('posts_collected')
     // console.log(this.data.postId)
