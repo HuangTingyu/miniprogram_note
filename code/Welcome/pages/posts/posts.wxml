@@ -1,8 +1,12 @@
 <!--pages/posts/posts.wxml-->
 <import src="posts-item/posts-item-template.wxml" />
+<import src="posts-swiper/posts-swiper-template.wxml" />
 <view>
   <swiper class="posts_swiper" indicator-dots="{{true}}" autoplay="{{false}}">
-    <swiper-item>
+    <block>
+      <template is="postSwiper"></template>
+    </block>
+    <!-- <swiper-item>
       <image src="/images/iqiyi.png" class="posts_swiper"></image>
     </swiper-item>
     <swiper-item>
@@ -10,7 +14,7 @@
     </swiper-item>
     <swiper-item>
       <image src="/images/wx.png" class="posts_swiper"></image>
-    </swiper-item>
+    </swiper-item> -->
   </swiper>
 
   <block wx:for="{{postsContent}}" wx:for-item="item" wx:key="date">

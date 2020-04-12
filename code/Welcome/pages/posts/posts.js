@@ -1,5 +1,6 @@
 // pages/posts/posts.js
 var postsData = require('../../data/posts-data.js')
+
 Page({
 
   /**
@@ -14,7 +15,10 @@ Page({
       url: 'posts-detail/posts-detail?id=' + postId
     })
   },
-
+  onSwiperTap: function(event){
+    console.log(1)
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

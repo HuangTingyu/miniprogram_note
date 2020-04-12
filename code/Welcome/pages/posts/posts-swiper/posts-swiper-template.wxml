@@ -1,0 +1,5 @@
+<template name="postSwiper">
+  <swiper-item>
+      <image src="/images/iqiyi.png" class="posts_swiper" bindtap="onSwiperTap"></image>
+    </swiper-item>
+</template>

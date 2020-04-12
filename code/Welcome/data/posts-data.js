@@ -65,6 +65,19 @@ var localDataBase = [
     }
   }
 ]
+var postSwiper = [
+  {
+    postId:3,
+    imageUrl:""
+  },{
+    postId:4,
+    imageUrl:""
+  },
+  {
+    postId: 5,
+    imageUrl: ""
+  }
+]
 module.exports = {
   postList: localDataBase
 }

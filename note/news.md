@@ -169,7 +169,16 @@ onLoad: function (options) {
   </block>
 ```
 
-这里的 `is` 是指定引用`name ` 为`postItem` 的模板
+这里的 `is` 是指定引用`name ` 为`postItem` 的模板。
+
+这里的 `block` 标签在页面上是找不到的，如果把这行代码改成
+
+```
+<view wx:for="{{postsContent}}" wx:for-item="item" wx:key="date">
+</view>
+```
+
+页面上会多一个view标签。
 
 #### wxss
 
