@@ -3,8 +3,8 @@
 <import src="posts-swiper/posts-swiper-template.wxml" />
 <view>
   <swiper class="posts_swiper" indicator-dots="{{true}}" autoplay="{{false}}">
-    <block>
-      <template is="postSwiper"></template>
+    <block wx:for="{{postSwiper}}" wx:for-item="item" wx:key="postId">
+      <template is="postSwiper" data="{{...item}}"></template>
     </block>
     <!-- <swiper-item>
       <image src="/images/iqiyi.png" class="posts_swiper"></image>

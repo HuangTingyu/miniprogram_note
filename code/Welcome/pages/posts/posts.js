@@ -7,16 +7,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({ postsContent:postsData.postList })
+      this.setData({
+        postsContent:postsData.postList,
+        postSwiper: postsData.postSwiper
+      })
   },
   onPostTap:function(event){
     var postId = event.currentTarget.dataset.postid;
     wx.navigateTo({
       url: 'posts-detail/posts-detail?id=' + postId
     })
-  },
-  onSwiperTap: function(event){
-    console.log(1)
   },
   
   /**

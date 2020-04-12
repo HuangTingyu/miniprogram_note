@@ -1,5 +1,6 @@
 <template name="postSwiper">
   <swiper-item>
-      <image src="/images/iqiyi.png" class="posts_swiper" bindtap="onSwiperTap"></image>
+      <image src="{{imageUrl}}" class="posts_swiper" bindtap="onPostTap"
+      data-postId="{{postId}}"></image>
     </swiper-item>
 </template>

@@ -63,21 +63,88 @@ var localDataBase = [
       coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
       singer: 'children'
     }
+  },
+  {
+    postId: 3,
+    date: "December 27 2019",
+    title: "Dear-迪丽热巴",
+    img: {
+      post_img: "/images/myqsj1.jpg",
+      author_img: "/images/avatar/dlrb.jpg"
+    },
+    content: "#爱豆锦鲤月# 总是你们送我花，这次换我送你们",
+    view_num: "78",
+    collect_num: "45",
+    headImgSrc: "../../../images/myqsj1.jpg",
+    author: "迪丽热巴",
+    dateTime: "24小时前",
+    detail: "22岁的朱茗是“欧美圈”七八年的粉丝，自己也会在AO3平台上写同人文，“227”事件之前，她在平台上有一篇放了蛮久没更新的欧美CP同人文，就在前两天，她还收到系统发来的催更提醒邮件。",
+    music: {
+      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title: 'littleStar',
+      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer: 'children'
+    }
+  },
+  {
+    postId: 4,
+    date: "December 27 2019",
+    title: "Dear-迪丽热巴",
+    img: {
+      post_img: "/images/myqsj2.jpg",
+      author_img: "/images/avatar/dlrb.jpg"
+    },
+    content: "#爱豆锦鲤月# 总是你们送我花，这次换我送你们",
+    view_num: "78",
+    collect_num: "45",
+    headImgSrc: "../../../images/myqsj2.jpg",
+    author: "迪丽热巴",
+    dateTime: "24小时前",
+    detail: "22岁的朱茗是“欧美圈”七八年的粉丝，自己也会在AO3平台上写同人文，“227”事件之前，她在平台上有一篇放了蛮久没更新的欧美CP同人文，就在前两天，她还收到系统发来的催更提醒邮件。",
+    music: {
+      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title: 'littleStar',
+      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer: 'children'
+    }
+  },
+  {
+    postId: 5,
+    date: "December 27 2020",
+    title: "Dear-迪丽热巴",
+    img: {
+      post_img: "/images/myqsj3.jpg",
+      author_img: "/images/avatar/dlrb.jpg"
+    },
+    content: "#爱豆锦鲤月# 总是你们送我花，这次换我送你们",
+    view_num: "78",
+    collect_num: "45",
+    headImgSrc: "../../../images/myqsj3.jpg",
+    author: "迪丽热巴",
+    dateTime: "24小时前",
+    detail: "22岁的朱茗是“欧美圈”七八年的粉丝，自己也会在AO3平台上写同人文，“227”事件之前，她在平台上有一篇放了蛮久没更新的欧美CP同人文，就在前两天，她还收到系统发来的催更提醒邮件。",
+    music: {
+      url: 'http://music.163.com/song/media/outer/url?id=388705.mp3',
+      title: 'littleStar',
+      coverImg: 'http://p1.music.126.net/ZpRP4nrIXETtp6zE5J-8RA==/2437617278796850.jpg?param=90y90',
+      singer: 'children'
+    }
   }
 ]
 var postSwiper = [
   {
     postId:3,
-    imageUrl:""
+    imageUrl:"/images/myqsj1.jpg"
   },{
     postId:4,
-    imageUrl:""
+    imageUrl:"/images/myqsj2.jpg"
   },
   {
     postId: 5,
-    imageUrl: ""
+    imageUrl: "/images/myqsj3.jpg"
   }
 ]
 module.exports = {
-  postList: localDataBase
+  postList: localDataBase,
+  postSwiper:postSwiper
 }
