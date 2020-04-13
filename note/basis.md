@@ -29,6 +29,16 @@ pages下面，一个目录就代表一个页面
  }
 ```
 
+## 常见错误
+
+### 1.页面点击没有跳转
+
+如果点击的页面，带有底部tab栏，那么应该使用
+
+```
+wx.switchTab
+```
+
 ## 注册小程序页面
 
 #### 小程序单位rpx
@@ -173,9 +183,11 @@ Ip6 下 1px = 1rpx = 0.5pt
 }
 ```
 
-## 事件的捕捉和回调
+## 点击事件
 
-### 点击事件
+相关的点击逻辑，在同名js文件里面写。
+
+`welcome.wxml` —— `bind:tap="onTap"`
 
 ```
 <view class="user-btn" bind:tap="onTap">
@@ -183,7 +195,15 @@ Ip6 下 1px = 1rpx = 0.5pt
 </view>
 ```
 
-### 页面跳转
+或者 `posts.wxml` —— `bindtap="onPostTap"`
+
+```
+<view bindtap="onPostTap" data-postId="{{item.postId}}">
+       <template is="postItem" data="{{...item}}"></template>
+</view>
+```
+
+### 页面路由(不带选项卡)
 
 两个跳转api —— `wx.navigateTo` ，以及 `wx.redirectTo`
 
@@ -219,7 +239,15 @@ Page({
 })
 ```
 
-## 操作提示
+### 页面路由（带选项卡）
+
+```
+wx.switchTab({
+      url: '../movies/movies',
+    })
+```
+
+## 提示框
 
 `miniprogram_note\code\Welcome\pages\posts\posts-detail.js`
 
@@ -258,3 +286,25 @@ wx.showModal({
 ### 全局变量
 
 详见 `news.md` 歌曲状态缓存
+
+### 底部选项卡
+
+`app.json` 文件
+
+```js
+"tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/movies/movies",
+        "text":"电影"
+      },
+      {
+        "pagePath":"pages/posts/posts",
+        "text":"文章"
+      }
+    ]
+  }
+```
+
+
+

@@ -14,4 +14,11 @@ https://api.douban.com
 http://t.yushu.im
 ```
 
-2.肖生克，你的名字
+2.搜索调试——肖生克，你的名字
+
+3.tab栏跳转，用switchTab
+
+```
+wx.switchTab({})
+```
+
