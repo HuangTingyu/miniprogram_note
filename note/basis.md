@@ -296,15 +296,23 @@ wx.showModal({
     "list":[
       {
         "pagePath":"pages/movies/movies",
-        "text":"电影"
+        "text":"电影",
+        "iconPath":"/images/tab/dianying.png",
+        "selectedIconPath":"/images/tab/dianying_hl.png"
       },
       {
         "pagePath":"pages/posts/posts",
-        "text":"文章"
+        "text":"文章",
+        "iconPath": "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
       }
     ]
   }
 ```
 
+使用tab栏的组件，要在相应的json页面里加上
 
+```
+"usingComponents": {}
+```
 
