@@ -1,10 +1,18 @@
 .DS_Store
 node_modules/
+miniprogram_npm/
 /dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 static/mock
+package-lock.json
+yarn.lock
+
+# 小程序项目配置文件（根据框架选择）
+# 微信私有配置（含敏感信息）
+project.private.config.json  
+
 
 # Editor directories and files
 .idea

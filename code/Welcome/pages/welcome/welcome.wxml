@@ -2,6 +2,7 @@
 	<view class="user-flex">
 	  	<view class="user-avatar-wrap">
     		<image  class = "user-avatar" src="../../images/avatar.jpg" />
+        <!-- <l-avatar open-data="{{['userAvatarUrl','userNickName']}}" /> -->
 	  	</view>
 		<text class="user-name">Hello,sakurahuang</text>
 		<view class="user-btn" bind:tap="onTap">
