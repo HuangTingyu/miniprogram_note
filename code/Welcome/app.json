@@ -5,6 +5,17 @@
     "pages/posts/posts-detail/posts-detail",
     "pages/movies/movies"
   ],
+  "subpackages": [
+    {
+      "name": "postsPackages",
+      "root": "postsPackages",
+      "pages": [
+        "pages/posts/posts",
+        "pages/posts/posts-detail/posts-detail",
+        "pages/movies/movies"
+      ]
+    }
+  ],
   "entryPagePath": "pages/posts/posts",
   "sitemapLocation": "sitemap.json",
   "window": {
