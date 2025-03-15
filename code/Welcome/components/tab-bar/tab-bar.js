@@ -21,7 +21,7 @@ Component({
         "selectedIconPath":"/images/tab/dianying_hl.png"
       },
       {
-        "pagePath":"/pages/posts/posts",
+        "pagePath":"/postsPackages/pages/posts/posts",
         "text":"文章",
         "iconPath": "/images/tab/yuedu.png",
         "selectedIconPath": "/images/tab/yuedu_hl.png"
