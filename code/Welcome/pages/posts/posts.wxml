@@ -22,5 +22,7 @@
        <template is="postItem" data="{{...item}}"></template>
     </view>
   </block>
+
+  <tab-bar id="tabBar"></tab-bar>
   
 </view>

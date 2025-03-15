@@ -1,6 +1,6 @@
 Page({
   onTap:function(){
-    wx.switchTab({
+    wx.navigateTo({
       url: '../movies/movies',
     })
   }
