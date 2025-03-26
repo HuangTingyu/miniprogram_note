@@ -1,2 +1,5 @@
 <!--postsPackages/pages/movies/movies.wxml-->
+<view>
 <text>postsPackages/pages/movies/movies.wxml</text>
+<tab-bar id="tabBar"></tab-bar>
+</view>

@@ -8,7 +8,8 @@
       "root": "postsPackages",
       "pages": [
         "pages/posts/posts",
-        "pages/posts-detail/posts-detail"
+        "pages/posts-detail/posts-detail",
+        "pages/movies/movies"
       ]
     }
   ],
@@ -19,6 +20,9 @@
     "audio"
   ],
   "usingComponents": {
-    "tab-bar": "/components/tab-bar/tab-bar"
+    "tab-bar": "components/tab-bar/tab-bar"
+  },
+  "componentPlaceholder": {
+    "tab-bar": "view"
   }
 }

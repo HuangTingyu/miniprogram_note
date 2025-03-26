@@ -2,16 +2,14 @@
 /* miniprogram/components/tab_bar/index.wxss */
 .bar_container {
   position: fixed;
-  bottom: 0 !important;
-  width: 100%;
   display: flex;
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   height: 50px;
   justify-content: space-around;
   background-color: #fff;
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .bar_container .bar__item {

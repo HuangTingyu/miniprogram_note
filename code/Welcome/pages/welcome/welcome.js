@@ -6,7 +6,12 @@
 Page({
   onTap:function(){
     wx.navigateTo({
-      url: '../movies/movies',
+      url: '/postsPackages/pages/posts/posts',
     })
+  },
+  onReady: function(){
+    const tabBar = this.selectComponent('#tabBar')
+    console.log('onReady')
+    console.log(tabBar)
   }
 })

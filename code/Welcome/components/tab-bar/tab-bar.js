@@ -15,7 +15,7 @@ Component({
     selected: 0,
     list: [
           {
-        "pagePath":"/pages/movies/movies",
+        "pagePath":"/postsPackages/pages/movies/movies",
         "text":"电影",
         "iconPath":"/images/tab/dianying.png",
         "selectedIconPath":"/images/tab/dianying_hl.png"
