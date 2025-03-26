@@ -24,5 +24,11 @@
   },
   "componentPlaceholder": {
     "tab-bar": "view"
+  },
+  "preloadRule": {
+    "pages/welcome/welcome":{
+      "network": "all",
+      "packages": ["postsPackages"]
+    }
   }
 }

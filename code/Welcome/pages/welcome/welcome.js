@@ -7,11 +7,13 @@ Page({
   onTap:function(){
     wx.navigateTo({
       url: '/postsPackages/pages/posts/posts',
+      // url: '/postsPackages/pages/movies/movies'
     })
   },
   onReady: function(){
-    const tabBar = this.selectComponent('#tabBar')
-    console.log('onReady')
-    console.log(tabBar)
+    // 不要这样写，会白屏
+    // wx.navigateTo({
+    //   url: '/postsPackages/pages/movies/movies',
+    // })
   }
 })
