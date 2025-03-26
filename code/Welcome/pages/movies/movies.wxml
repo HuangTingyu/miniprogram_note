@@ -1,0 +1,5 @@
+<!--pages/movies.wxml-->
+<!-- <l-button size="medium">中按钮</l-button> -->
+<text>pages/movies.wxml</text>
+<tab-bar id="tabBar"></tab-bar>
+
